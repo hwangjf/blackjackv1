@@ -5,7 +5,7 @@ class Card extends Component {
     super(props)
     
     this.state = {
-      display: this.initDisplay(props),
+      display: this.initDisplay(props)
     }
   }
 
@@ -93,8 +93,7 @@ class Card extends Component {
       default:
         degrees = 0
     }
-    // console.log(degrees)
-    // degrees += this.props.index * 12
+
     return `rotate(${degrees}deg)`
   }
 
@@ -107,11 +106,10 @@ class Card extends Component {
           zIndex: this.props.index+1,
           transform: this.rotate()
         }}
-
       >
+      
       {this.state.display === "front" 
-      ?
-        <span>
+      ? <span>
           <span
             style={{
               float: "left",
@@ -121,10 +119,8 @@ class Card extends Component {
             }}
           >
             {parseInt(this.props.value, 10) > 0
-            ?
-              this.props.value
-            :
-              this.props.value[0]
+            ? this.props.value
+            : this.props.value[0]
             }
 
             <div>
@@ -155,22 +151,18 @@ class Card extends Component {
             }}
           >
             {parseInt(this.props.value, 10) > 0
-              ?
-              this.props.value
-              :
-              this.props.value[0]
+              ? this.props.value
+              : this.props.value[0]
             }
 
-              <div>
-                {this.suit()}
-              </div>
-            <span>
-              
-            </span>
+            <div>
+              {this.suit()}
+            </div>
+            
           </span>
         </span>
-      :
-        <img 
+        
+      : <img 
           src="http://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-bicycle-rider-back-1_grande.png?v=1530155027" 
           alt={`card value is ${this.props.value}`}
           style={{

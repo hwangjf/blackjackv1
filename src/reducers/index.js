@@ -1,13 +1,25 @@
-// import types from './types';
+import {
+  START_GAME,
+  GET_DECK_ID
+} from '../actions/types';
 
-const INITIAL_STATE = {
-  
+const initialState = {
+  players: ["playerOne", "dealer"],
+  playerCards: [],
+  dealerCards: [],
+  deckId: ""
+  // remainingCards: []
 }
-const reducers = (state = INITIAL_STATE, action) => {
+
+const gameReducer = (state = initialState, action) => {
   switch (action.type) {
-    // case:
+    case GET_DECK_ID:
+      return {
+        ...state, 
+        deckId: action.payload
+      }
     default: return state;
   }
 }
 
-export default reducers;
+export default gameReducer;

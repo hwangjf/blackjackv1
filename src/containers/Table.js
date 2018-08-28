@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Hand from './Hand';
+import { getDeckId, startGame } from '../actions/index';
+import { connect } from 'react-redux';
 
 class Table extends Component {
   state = {
@@ -142,4 +144,16 @@ class Table extends Component {
   }
 }
 
-export default Table;
+function mapStateToProps(state) {
+  return {
+    deckId: state.deckId
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    startGame: () => startGame(dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table);
