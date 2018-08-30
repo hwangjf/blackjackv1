@@ -1,11 +1,12 @@
 import { createStore } from 'redux'
-import gameReducer from '../reducers'
+import rootReducer from '../reducers'
 
-const initialState = {}
+// const initialState = {}
 
 const store = createStore(
-  gameReducer, 
-  initialState,
+  rootReducer,
+  // initialState
+  /* preloadedState, */
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 

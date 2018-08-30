@@ -6,7 +6,7 @@
   margin: auto;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 10px;
   grid-template-rows: 100px 150px 150px 100px;
   background: green;
@@ -16,15 +16,15 @@
 }
 
 .dealer {
-  grid-column: 2 / 3;
+  grid-column: 3 / 4;
   grid-row: 1;
 }
 
 .player {
-  grid-column: 2 / 3;
+  grid-column: 3 / 4;
   grid-row: 4;
 }
-
+/* 
 .playerCards {
   align-self: center;
   justify-self: center;
@@ -55,4 +55,4 @@
   background: #fff;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
 }
-
+ */

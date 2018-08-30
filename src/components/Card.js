@@ -98,6 +98,7 @@ class Card extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <span 
         className="card" 
@@ -161,7 +162,7 @@ class Card extends Component {
             
           </span>
         </span>
-        
+
       : <img 
           src="http://cdn.shopify.com/s/files/1/0200/7616/products/playing-cards-bicycle-rider-back-1_grande.png?v=1530155027" 
           alt={`card value is ${this.props.value}`}

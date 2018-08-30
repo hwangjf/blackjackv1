@@ -16,6 +16,11 @@ class App extends Component {
         <h1>
           Black Jack
         </h1>
+        <button onClick={() => this.props.deal(this.props.deckId)}>
+          redux start
+        </button>
+        <br />
+        <br />
         <Table/>
       </div>
     )

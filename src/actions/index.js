@@ -1,6 +1,7 @@
 import {
-  START_GAME,
-  GET_DECK_ID
+  DEAL,
+  GET_DECK_ID,
+  ADD_HAND
 } from './types';
 import Adapter from '../Adapter';
 
@@ -14,13 +15,15 @@ export const getDeckId = (dispatch) => {
     })
 }
 
-export const startGame = (dispatch, deckId, num=4) => {
-  Adapter.dealCard(deckId, num)    
+export function addHand() {return {type: ADD_HAND} }
+
+export const deal = (dispatch, deckId, num=4) => {
+  Adapter.deal(deckId, num)    
     .then(data => {
       let playerCardsArray = [data.cards[0],data.cards[2]]
       let dealerCardsArray = [data.cards[1],data.cards[3]]
       dispatch({
-        type: GET_DECK_ID,
+        type: DEAL,
         payload: {
           playerCards: playerCardsArray,
           dealerCards: dealerCardsArray

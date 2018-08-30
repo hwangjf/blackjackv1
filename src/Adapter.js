@@ -7,8 +7,13 @@ export default class Adapter {
       .then(response => response.json())
   }
 
-  static dealCard(deckId, num) {
+  static deal(deckId, num) {
     return fetch(deckOfCardsUrl + `${deckId}/draw/?count=${num}`)
       .then(response => response.json())
   }
+
+
+
+
+
 }
